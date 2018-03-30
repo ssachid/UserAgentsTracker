@@ -1,6 +1,6 @@
 <div class="container well">
   <h2>User Agents Details</h1>
-  <%= render partial: "list", collection: @user_agents %>
+  <%= render partial: "list" %>
   <hr>
    <%= link_to "Refresh", user_agents_path, remote: true, class: "btn btn-primary btn-md" %>
    <%= link_to "Back to Home Page", root_path, class: "btn btn-md btn-primary back" %>
