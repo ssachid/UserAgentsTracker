@@ -10,7 +10,14 @@
       </tr>
     </thead>
     <tbody>
-
+      <% @user_agents.each do |user_agent| %>
+        <tr>
+          <td><%= user_agent.name %></td>
+          <td><%= user_agent.visits_count %></td>
+          <td><%= time_ago_in_words(user_agent.created_at) %> ago</td>
+          <td><%= time_ago_in_words(user_agent.updated_at)%> ago</td>
+        </tr>
+      <% end %>
     </tbody>
   <table>
   <hr>
