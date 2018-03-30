@@ -1,27 +1,8 @@
 <div class="center well">
   <h2>User Agent Details</h1>
-  <table class="table table-striped user-agent-content">
-    <thead>
-      <tr>
-        <th>User Agent Details</th>
-        <th>No of Visits</th>
-        <th>First Visit</th>
-        <th>Last Visit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @user_agents.each do |user_agent| %>
-        <tr>
-          <td><%= user_agent.name %></td>
-          <td><%= user_agent.visits_count %></td>
-          <td><%= time_ago_in_words(user_agent.created_at) %> ago</td>
-          <td><%= time_ago_in_words(user_agent.updated_at)%> ago</td>
-        </tr>
-      <% end %>
-    </tbody>
-  <table>
+  <%= render partial: "list", collection: @user_agents %>
   <hr>
-   <%= link_to "Refresh", user_agents_path, class: "btn btn-primary btn-md" %>
+   <%= link_to "Refresh", user_agents_path, remote: true, class: "btn btn-primary btn-md" %>
    <%= link_to "Back to Home Page", root_path, class: "btn btn-md btn-primary back" %>
 
 </div>
